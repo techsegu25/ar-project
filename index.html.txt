@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene mindar-image="imageTargetSrc: C:\Users\USER\Downloads\targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      
+      <a-assets>
+        <a-asset-item id="snowLeopardModel" src="./snow_leopard.glb"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="90 0 0" position="0 0 0" scale="0.1 0.1 0.1" src="#snowLeopardModel"
+          animation="property: rotation; to: 90 360 0; loop: true; dur: 10000">
+        </a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
